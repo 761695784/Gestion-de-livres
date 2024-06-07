@@ -10,7 +10,10 @@
 
     <div class="container text-center">
             <h1>Hello, world!</h1> <hr>
-            <a href="/ajouter" class="btn btn-primary">Ajouter un livre</a><hr>
+            <a href="/ajouter" class="btn btn-primary">Ajouter un livre</a>
+            <a href="/afficher_categorie" class="btn btn-primary">Categories</a>
+            <a href="#" class="btn btn-primary">Ajouter un Rayon</a>
+            <hr>
        
             
             @if (session('status'))
