@@ -86,6 +86,12 @@ class LivreController extends Controller
       return redirect('/liste')->with('status', 'Le livre a été modifié avec succès.');
    }
    
+   public function supprimer($id){
+      $livre = Livre::find($id);
+      $livre->delete();
+      return redirect('/liste')->with('status', 'Le livre a été supprimé avec succès.');
+
+   }
 
 
 

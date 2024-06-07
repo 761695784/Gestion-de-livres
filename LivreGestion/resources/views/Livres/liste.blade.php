@@ -41,7 +41,7 @@
                             <hr>
                             <a href="modifier/{{$livre->id}}" class="btn btn-warning">Modifier</a>
                          
-                            <a href="#" class="btn btn-danger">Supprimer</a>
+                            <a href="supprimer/{{$livre->id}}" class="btn btn-danger">Supprimer</a>
                      
                         </div>
                     </div>
