@@ -49,4 +49,19 @@ class LivreController extends Controller
      $livre->save();
       return redirect('/liste')->with('status', 'Le livre a été ajouté avec succès.');
    }
+
+   public function modifier($id)
+   {
+      $livre = Livre::with('categorie', 'rayon')->find($id); // Récupérer un seul livre // Récupérer un seul livre
+     
+       return view('Livres.modifier', compact('livre'));
+   }
+   
+
+
+
+
+
+
+
 }

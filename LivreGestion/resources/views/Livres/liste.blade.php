@@ -39,7 +39,7 @@
                         <a href="#" class="btn btn-info">Voir plus</a>  
                                               
                             <hr>
-                            <a href="#" class="btn btn-warning">Modifier</a>
+                            <a href="modifier/{{$livre->id}}" class="btn btn-warning">Modifier</a>
                          
                             <a href="#" class="btn btn-danger">Supprimer</a>
                      
