@@ -16,6 +16,7 @@ class Livre extends Model
         'isbn',
         'editeur',
         'image',
+        'statut',
         'rayon_id',
         'categorie_id',
 

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('auteur');
             $table->string('isbn')->unique(); // Ajout de la contrainte unique sur 'isbn'
             $table->string('editeur');
+            $table->string('statut');
             $table->foreignId('rayon_id')->constrained('rayons')->onDelete('cascade');
             $table->foreignId('categorie_id')->nullable()->constrained('categories')->onDelete('set null'); // Rendre 'categorie_id' nullable
             $table->timestamps();

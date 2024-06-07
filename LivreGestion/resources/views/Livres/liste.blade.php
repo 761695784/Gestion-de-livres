@@ -35,10 +35,10 @@
                             <p class="card-text"><strong>Publié le</strong> : {{$livre->date_publication}}</p>
                             <p class="card-text"><strong>Rayon</strong> : {{ $livre->rayon->libelle }} - {{ $livre->rayon->partie }} </p>
                             <p class="card-text"><strong>Categorie</strong> : {{$livre->categorie->libelle}}</p>
+                            <span class="badge bg-success">Statut : {{$livre->statut}}</span><hr>
                 
-                        <a href="#" class="btn btn-info">Voir plus</a>  
-                                              
-                            <hr>
+                        {{-- <a href="#" class="btn btn-info">Voir plus</a>   --}}
+            
                             <a href="modifier/{{$livre->id}}" class="btn btn-warning">Modifier</a>
                          
                             <a href="supprimer/{{$livre->id}}" class="btn btn-danger">Supprimer</a>

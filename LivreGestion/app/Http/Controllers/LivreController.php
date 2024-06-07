@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Livre;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class LivreController extends Controller
 
@@ -29,6 +30,7 @@ class LivreController extends Controller
          'editeur' =>'required',
          'nbre_page' =>'required',
          'isbn' =>'required',
+         'statut' =>'required',
          'rayon_id' =>'required',
          'categorie_id' =>'nullable',
          'date_publication' =>'required|date',
@@ -42,6 +44,7 @@ class LivreController extends Controller
      $livre->editeur = $request->editeur;
      $livre->nbre_page = $request->nbre_page;
      $livre->isbn = $request->isbn;
+     $livre->statut = $request->statut;
      $livre->rayon_id = $request->rayon_id;
      $livre->categorie_id = $request->categorie_id;
      $livre->date_publication = $request->date_publication;
@@ -67,6 +70,7 @@ class LivreController extends Controller
          'editeur' =>'required',
          'nbre_page' =>'required',
          'isbn' =>'required',
+         'statut' =>'required',
          'rayon_id' =>'required',
          'categorie_id' =>'nullable',
          'date_publication' =>'required|date',
@@ -79,6 +83,7 @@ class LivreController extends Controller
       $livre->editeur = $request->editeur;
       $livre->nbre_page = $request->nbre_page;
       $livre->isbn = $request->isbn;
+      $livre->statut = $request->statut;
       $livre->rayon_id = $request->rayon_id;
       $livre->categorie_id = $request->categorie_id;
       $livre->date_publication = $request->date_publication;

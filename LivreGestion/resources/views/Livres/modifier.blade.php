@@ -59,7 +59,7 @@
                 <option value="3" {{ $livre->rayon_id == 3 ? 'selected' : '' }}>Poésie</option>
                 <option value="4" {{ $livre->rayon_id == 4 ? 'selected' : '' }}>Non-Fiction</option>
               </select>
-          </div>
+          </div><br/>
 
           <div class="form-group">
             <label for="categorie">Preciser la Categorie </label>
@@ -70,6 +70,16 @@
                 <option value="4" {{ $livre->categorie_id == 4 ? 'selected' : '' }}>Non-Fiction</option>
               </select>
           </div>
+
+          <div class="form-group">
+            <label for="statut" class="form-label">Definir le Statut</label>
+            <select class="form-select" id="statut" name="statut">
+              <option value="disponible"  {{ $livre->statut == disponible ? 'selected' : '' }}>disponible</option>
+              <option value="indisponible" {{ $livre->statut == indisponible ? 'selected' : '' }}>indisponible</option>
+            </select>
+            </div>
+
+
           <br />
           <button type="submit" class="btn btn-primary">Modifier</button>
           <a href="/liste" class="btn btn-danger">Annuler</a>

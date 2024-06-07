@@ -74,9 +74,16 @@
               <option  value="1" >Roman</option>
               <option value="2">Theatre</option>
               <option value="3">Poesie</option>
-              <option value="4">Non-Fiction</option>
-             
+              <option value="4">Non-Fiction</option> 
             </select>
+          </div>
+
+          <div class="form-group">
+          <label for="statut" class="form-label">Definir le Statut</label>
+          <select class="form-select" id="statut" name="statut">
+            <option value="Disponible">Disponible</option>
+            <option value="Indisponible">Indisponible</option>
+          </select>
           </div>
           <br />
           <button type="submit" class="btn btn-primary">Ajouter</button>
