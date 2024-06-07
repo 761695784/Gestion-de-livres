@@ -12,7 +12,7 @@
       
     
 
-        <form action="modifier_traitement" method="POST">
+        <form action="/modifier/modifier_traitement" method="POST">
             @csrf
             <input type="hidden" name="id" value="{{$livre->id}}">
           <div class="mb-3">
