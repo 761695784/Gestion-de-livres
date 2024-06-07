@@ -12,6 +12,13 @@
             <h1>Hello, world!</h1> <hr>
             <a href="/ajouter" class="btn btn-primary">Ajouter un livre</a><hr>
        
+            
+            @if (session('status'))
+            <div class="alert alert-success">
+                {{session('status')}}
+            </div>   
+        @endif
+            
             <div class="row">
               <div class="row">
                 @foreach($livres as $livre)
@@ -22,7 +29,8 @@
                         <div class="card-body">
                             <h5 class="card-title"><strong>Titre</strong> -> {{$livre->titre}}</h5>
                             <p class="card-text"><strong>Ecrit par</strong> : {{$livre->auteur}}</p>
-                            <p class="card-text"><strong>Edité par</strong>: {{$livre->editeur}}</p>
+                            <p class="card-text"><strong>Edité par</strong> : {{$livre->editeur}}</p>
+                            <p class="card-text"><strong>ISBN</strong> : {{$livre->isbn}}</p>
                             <p class="card-text"><strong>Nombre de page</strong> : {{$livre->nbre_page}}</p>
                             <p class="card-text"><strong>Publié le</strong> : {{$livre->date_publication}}</p>
                             <p class="card-text"><strong>Rayon</strong> : {{ $livre->rayon->libelle }} - {{ $livre->rayon->partie }} </p>

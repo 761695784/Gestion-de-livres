@@ -10,3 +10,7 @@ Route::get('/', function () {
 
 
 Route::get('/liste', [LivreController::class, 'liste']);
+
+Route::get('/ajouter', [LivreController::class, 'ajouter']);
+
+Route::post('/ajouter_traitement', [LivreController::class, 'ajouter_traitement']);
