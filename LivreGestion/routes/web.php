@@ -29,6 +29,10 @@ Route::get('/supprimer/{id}', [LivreController::class, 'supprimer']);
 
 Route::get('/affiche_rayon', [RayonController::class, 'afficher']);
 
+Route::get('/ajout_rayon', [RayonController::class, 'ajouter_rayon']);
+
+Route::post('/ajout_rayon_traitement', [RayonController::class, 'ajouter_rayon_traitement']);
+
 
 //CRUD SUR les CATEGORIES
 

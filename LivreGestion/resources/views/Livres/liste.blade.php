@@ -12,7 +12,7 @@
             <h1>Hello, world!</h1> <hr>
             <a href="/ajouter" class="btn btn-primary">Ajouter un livre</a>
             <a href="/afficher_categorie" class="btn btn-primary">Categories</a>
-            <a href="#" class="btn btn-primary">Ajouter un Rayon</a>
+            <a href="/affiche_rayon" class="btn btn-primary">Rayon</a>
             <hr>
        
             
