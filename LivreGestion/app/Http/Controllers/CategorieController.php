@@ -31,4 +31,32 @@ class CategorieController extends Controller
     return redirect()->back()->with('status', 'Categorie ajoutée avec succès');
    
 }
+    public function modifier($id){
+        $categorie = Categorie::find($id);
+        return view('Categories.modif_categorie', compact('categorie'));
+    }
+
+    public function modifier_traitement(Request $request){
+        $request->validate([
+            'libelle' =>'required',
+            'description' =>'required',
+        ]);
+        $categorie = Categorie::find($request->id);
+        $categorie->libelle = $request->libelle;
+        $categorie->description = $request->description;
+        $categorie->save();
+        return redirect('/afficher_categorie')->with('status', 'La categorie a été modifiée avec succès.');
+    }
+
+    public function supprimer($id){
+        $categorie = Categorie::find($id);
+        $categorie->delete();
+        return redirect('/afficher_categorie')->with('status', 'La categorie a été supprimée avec succès.');
+    }
+
+
+
+
+
+
  }

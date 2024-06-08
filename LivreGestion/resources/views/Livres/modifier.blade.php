@@ -73,9 +73,9 @@
 
           <div class="form-group">
             <label for="statut" class="form-label">Definir le Statut</label>
-            <select class="form-select" id="statut" name="statut">
-              <option value="disponible"  {{ $livre->statut == disponible ? 'selected' : '' }}>disponible</option>
-              <option value="indisponible" {{ $livre->statut == indisponible ? 'selected' : '' }}>indisponible</option>
+            <select class="form-select" id="statut" name="statut">  
+              <option value="disponible"  {{ $livre->statut == 'disponible' ? 'selected' : '' }}>disponible</option>
+              <option value="indisponible" {{ $livre->statut == 'indisponible' ? 'selected' : '' }}>indisponible</option>
             </select>
             </div>
 

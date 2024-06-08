@@ -40,3 +40,9 @@ Route::get('/ajouter_categorie', [CategorieController::class, 'ajouter_categorie
 
 
 Route::post('/ajouter_categorie_traitement', [CategorieController::class, 'ajouter_categorie_traitement']);
+
+Route::get('/modif_categorie/{id}', [CategorieController::class, 'modifier']);
+
+Route::post('/modifier_categorie_traitement/{id}', [CategorieController::class, 'modifier_traitement']);
+
+Route::get('/supprimer_categorie/{id}', [CategorieController::class, 'supprimer']);
