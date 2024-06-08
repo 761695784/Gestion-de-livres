@@ -26,7 +26,7 @@
 
           <br />
           <button type="submit" class="btn btn-primary">Modifier</button>
-          <a href="/liste" class="btn btn-danger">Annuler</a>
+          <a href="/afficher_categorie" class="btn btn-danger">Annuler</a>
         </form>
       
       </div>

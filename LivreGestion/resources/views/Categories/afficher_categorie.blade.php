@@ -18,7 +18,9 @@
           <div class="cols12">
 
             <h1>Hello, world!</h1> <hr>
-            <a href="/ajouter_categorie" class="btn btn-primary">Ajouter un categorie</a><hr>
+            <a href="/ajouter_categorie" class="btn btn-primary">Ajouter un categorie</a>
+            <a href="/liste" class="btn btn-warning">Retour</a>
+            <hr>
             
      <table class="table">
                     <thead>
