@@ -18,7 +18,7 @@
           <div class="cols12">
 
             <h1>Hello, world!</h1> <hr>
-            <a href="/ajout_rayon" class="btn btn-primary">Ajouter un rayon</a><hr>
+            <a href="/modif_rayon_traitement" class="btn btn-primary">Ajouter un rayon</a><hr>
             
      <table class="table">
                     <thead>
@@ -35,8 +35,8 @@
                 <td> {{$rayon->id}} </td> 
                 <td>{{$rayon->libelle}}</td>
                 <td>{{$rayon->partie}}</td>
-                <td><a href="#" class="btn btn-primary">Modifier</a></td>
-                <td><a href="#" class="btn btn-danger">Supprimer</a></td>
+                <td><a href="/modif_rayon/{{$rayon->id}}" class="btn btn-primary">Modifier</a></td>
+                <td><a href="/supprimer_rayon/{{$rayon->id}}" class="btn btn-danger">Supprimer</a></td>
             </tr>
             @endforeach
 

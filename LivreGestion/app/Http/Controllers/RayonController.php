@@ -29,5 +29,28 @@ class RayonController extends Controller
         $rayon->save();
         return redirect('/affiche_rayon')->with('status', 'Rayon ajouté avec succès');
     }
+
+    public function modifier($id){
+        $rayon = Rayon::find($id);
+        return view('Rayons.modif_rayon', compact('rayon'));
+    }
+
+    public function modifier_traitement(Request $request){
+        $request->validate([
+            'libelle' =>'required',
+            'partie' =>'required',
+        ]);
+        $rayon = Rayon::find($request->id);
+        $rayon->libelle = $request->libelle;
+        $rayon->partie = $request->partie;
+        $rayon->save();
+        return redirect('/affiche_rayon')->with('status', 'Rayon modifié avec succès');
+    }
+
+    public function supprimer($id){
+        $rayon = Rayon::find($id);
+        $rayon->delete();
+        return redirect('/affiche_rayon')->with('status', 'Rayon supprimé avec succès');
+    }
  
 }

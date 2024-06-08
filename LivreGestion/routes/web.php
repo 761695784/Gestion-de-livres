@@ -33,6 +33,12 @@ Route::get('/ajout_rayon', [RayonController::class, 'ajouter_rayon']);
 
 Route::post('/ajout_rayon_traitement', [RayonController::class, 'ajouter_rayon_traitement']);
 
+Route::get('/modif_rayon/{id}', [RayonController::class,'modifier']);
+
+Route::post('/modif_rayon_traitement/{id}', [RayonController::class, 'modifier_traitement']);
+
+Route::get('/supprimer_rayon/{id}', [RayonController::class, 'supprimer']);
+
 
 //CRUD SUR les CATEGORIES
 
