@@ -24,32 +24,26 @@
             
             <div class="row">
               <div class="row">
-                @foreach($livres as $livre)
-                <div class="col-md-4">
-                    <div class="card" style="width: 18rem;">
-                      
-                        <img src="{{asset ($livre->image)}}" class="card-img-top" alt="livre one">
-                        <div class="card-body">
-                            <h5 class="card-title"><strong>Titre</strong> -> {{$livre->titre}}</h5>
-                            <p class="card-text"><strong>Ecrit par</strong> : {{$livre->auteur}}</p>
-                            <p class="card-text"><strong>Edité par</strong> : {{$livre->editeur}}</p>
-                            <p class="card-text"><strong>ISBN</strong> : {{$livre->isbn}}</p>
-                            <p class="card-text"><strong>Nombre de page</strong> : {{$livre->nbre_page}}</p>
-                            <p class="card-text"><strong>Publié le</strong> : {{$livre->date_publication}}</p>
-                            <p class="card-text"><strong>Rayon</strong> : {{ $livre->rayon->libelle }} - {{ $livre->rayon->partie }} </p>
-                            <p class="card-text"><strong>Categorie</strong> : {{$livre->categorie->libelle}}</p>
-                            <span class="badge bg-success">Statut : {{$livre->statut}}</span><hr>
-                
-                        {{-- <a href="#" class="btn btn-info">Voir plus</a>   --}}
-            
-                            <a href="modifier/{{$livre->id}}" class="btn btn-warning">Modifier</a>
-                         
-                            <a href="supprimer/{{$livre->id}}" class="btn btn-danger">Supprimer</a>
-                     
+                    @foreach($livres as $livre)
+                        <div class="col-md-4">
+                            <div class="card" style="width: 18rem;">
+                                <img src="{{asset ($livre->image)}}" class="card-img-top" alt="livre one">
+                                <div class="card-body">
+                                    <h5 class="card-title"><strong>Titre</strong> -> {{$livre->titre}}</h5>
+                                    <p class="card-text"><strong>Ecrit par</strong> : {{$livre->auteur}}</p>
+                                    <p class="card-text"><strong>Edité par</strong> : {{$livre->editeur}}</p>
+                                    <p class="card-text"><strong>ISBN</strong> : {{$livre->isbn}}</p>
+                                    <p class="card-text"><strong>Nombre de page</strong> : {{$livre->nbre_page}}</p>
+                                    <p class="card-text"><strong>Publié le</strong> : {{$livre->date_publication}}</p>
+                                    <p class="card-text"><strong>Rayon</strong> : {{ $livre->rayon->libelle }} - {{ $livre->rayon->partie }} </p>
+                                    <p class="card-text"><strong>Categorie</strong> : {{$livre->categorie->libelle}}</p>
+                                    <span class="badge bg-success">Statut : {{$livre->statut}}</span><hr>
+                                    <a href="modifier/{{$livre->id}}" class="btn btn-warning">Modifier</a>
+                                    <a href="supprimer/{{$livre->id}}" class="btn btn-danger">Supprimer</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                @endforeach
+                    @endforeach
             </div>
         </div>
     
