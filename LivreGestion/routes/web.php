@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LivreController;
 use App\Http\Controllers\RayonController;
@@ -9,6 +10,9 @@ use App\Http\Controllers\CategorieController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['middleware' => 'auth'],function(){
+    
 
 // CRUD sur les LIVRES
 
@@ -56,3 +60,22 @@ Route::get('/modif_categorie/{id}', [CategorieController::class, 'modifier']);
 Route::post('/modifier_categorie_traitement/{id}', [CategorieController::class, 'modifier_traitement']);
 
 Route::get('/supprimer_categorie/{id}', [CategorieController::class, 'supprimer']);
+
+Route::delete('/logout', [AuthController::class,'logout'])->name('logout');
+
+
+});
+
+
+Route::group(['middleware' => 'guest'],function(){
+
+// PARTIE AUTHENTIFICATION
+Route::get('/register', [AuthController::class,'register'])->name('register');
+
+Route::post('/register', [AuthController::class,'registerAdd'])->name('register');
+
+Route::get('/login', [AuthController::class,'login'])->name('login');
+
+Route::post('/login', [AuthController::class,'loginPost'])->name('login');
+
+});

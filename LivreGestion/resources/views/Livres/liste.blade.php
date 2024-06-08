@@ -9,10 +9,15 @@
   <body>
 
     <div class="container text-center">
-            <h1>Hello, world!</h1> <hr>
+            <h1>Bienvenue {{Auth::user()->name }}</h1> <hr>
             <a href="/ajouter" class="btn btn-primary">Ajouter un livre</a>
             <a href="/afficher_categorie" class="btn btn-primary">Categories</a>
             <a href="/affiche_rayon" class="btn btn-primary">Rayon</a>
+            <form action="{{ route('logout') }}" method="POST" class="d-flex">
+              @csrf
+              @method('DELETE')
+              <button class="btn btn-danger" type="submit">Deconnexion</button>
+            </form>
             <hr>
        
             
