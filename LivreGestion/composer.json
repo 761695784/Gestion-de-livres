@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "simplon/monprojet",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "C'est mon projet de Crud avec laravel .",
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
