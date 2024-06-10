@@ -7,7 +7,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
-
+    <style>
+    .card{ 
+      margin:2rem;
+    }
+      </style>
     <div class="container text-center">
             <h1>Bienvenue {{Auth::user()->name }}</h1> <hr>
             <a href="/ajouter" class="btn btn-primary">Ajouter un livre</a>
@@ -30,9 +34,9 @@
             <div class="row">
               <div class="row">
                     @foreach($livres as $livre)
-                        <div class="col-md-4">
+                        <div class="col-md-4 ">
                             <div class="card" style="width: 18rem;">
-                                <img src="{{asset ($livre->image)}}" class="card-img-top" alt="livre one">
+                                <img src="{{asset ($livre->image)}}" class="card-img-top" style="height: 300px; object-fit:cover" alt="livre one">
                                 <div class="card-body">
                                     <h5 class="card-title"><strong>Titre</strong> -> {{$livre->titre}}</h5>
                                     <p class="card-text"><strong>Ecrit par</strong> : {{$livre->auteur}}</p>

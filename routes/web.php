@@ -7,9 +7,8 @@ use App\Http\Controllers\RayonController;
 use App\Http\Controllers\CategorieController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AuthController::class,'login'])->name('login');
+
 
 Route::group(['middleware' => 'auth'],function(){
     

@@ -18,7 +18,7 @@
           <div class="cols12">
 
             <h1>Hello, world!</h1> <hr>
-            <a href="/modif_rayon_traitement" class="btn btn-primary">Ajouter un rayon</a>
+            <a href="/ajout_rayon" class="btn btn-primary">Ajouter un rayon</a>
             <a href="/liste" class="btn btn-warning">Retour</a>
             <hr>
             
