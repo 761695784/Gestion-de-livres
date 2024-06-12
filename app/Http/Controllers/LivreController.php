@@ -24,17 +24,16 @@ class LivreController extends Controller
    public function ajouter_traitement(Request $request)
    {
       $request->validate([
-         'image' =>'required',
-         'titre' =>'required',
-         'auteur' =>'required',
-         'editeur' =>'required',
-         'nbre_page' =>'required',
-         'isbn' =>'required',
-         'statut' =>'required',
-         'rayon_id' =>'required',
-         'categorie_id' =>'nullable',
-         'date_publication' =>'required|date',
-         
+         'image' => 'required|image',
+         'titre' => 'required|string|max:50',
+         'auteur' => 'required|string|max:20',
+         'editeur' => 'required|string|max:30',
+         'nbre_page' => 'required|integer',
+         'isbn' => 'required|string|max:13|unique:livres,isbn',
+         'statut' => 'required|string|max:20',
+         'rayon_id' => 'required|exists:rayons,id',
+         'categorie_id' => 'nullable|exists:categories,id',
+         'date_publication' => 'required|date',
      ]);
  
      $livre= new Livre();
@@ -65,12 +64,12 @@ class LivreController extends Controller
    public function modifier_traitement(Request $request){
       $request->validate([
          'image' =>'required',
-         'titre' =>'required',
-         'auteur' =>'required',
-         'editeur' =>'required',
+         'titre' => 'required|string|max:50',
+         'auteur' => 'required|string|max:20',
+         'editeur' => 'required|string|max:30',
          'nbre_page' =>'required',
-         'isbn' =>'required',
-         'statut' =>'required',
+         'isbn' => 'required|string|max:13|unique:livres,isbn',
+         'statut' => 'required|string|max:20',
          'rayon_id' =>'required',
          'categorie_id' =>'nullable',
          'date_publication' =>'required|date',

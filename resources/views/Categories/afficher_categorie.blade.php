@@ -38,7 +38,7 @@
                 <td>{{$categorie->libelle}}</td>
                 <td>{{$categorie->description}}</td>
                 <td><a href="/modif_categorie/{{$categorie->id}}" class="btn btn-primary">Modifier</a></td>
-                <td><a href="/supprimer_categorie/{{$categorie->id}}" class="btn btn-danger">Supprimer</a></td>
+                <td><a href="/supprimer_categorie/{{$categorie->id}}" class="btn btn-danger">Supprimer</a></td> 
             </tr>
             @endforeach
 

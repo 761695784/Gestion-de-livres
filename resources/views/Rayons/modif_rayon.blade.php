@@ -18,10 +18,16 @@
           <div class="mb-3">
             <label for="Libelle" class="form-label">Libelle</label>
             <input class="form-control" type="text" name="libelle" value="{{$rayon->libelle}}">
+            @error('libelle')
+            <div>{{ $message }}</div>
+            @enderror
           </div>
           <div class="mb-3">
             <label for="partie" class="form-label">Partie</label>
             <textarea class="form-control" name="partie"  row="10" >{{$rayon->partie}}</textarea> 
+            @error('Partie')
+            <div>{{ $message }}</div>
+            @enderror
           </div>
 
           <br />

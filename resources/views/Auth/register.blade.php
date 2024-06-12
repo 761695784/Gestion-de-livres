@@ -27,18 +27,27 @@
         <form action="{{route('register')}}" method="POST">
             @csrf
           <div class="mb-3">
-            <label for="Nom complet" class="form-label">Nom complet</label>
-            <input type="text" class="form-control" name="name" placeholder="Entrez votre Nom complet">
+         <label for="name">Nom complet</label>
+        <input type="text" name="name" id="name" value="{{ old('name') }}">
+        @error('name')
+            <div>{{ $message }}</div>
+        @enderror
           </div>
          
           <div class="mb-3">
-            <label for="Email" class="form-label">Email</label>
-            <input type="email" class="form-control" name="email" placeholder="Entrez votre Email ">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" value="{{ old('email') }}">
+            @error('email')
+                <div>{{ $message }}</div>
+            @enderror
           </div>
 
           <div class="mb-3">
-            <label for="Mot de passe" class="form-label">Mot de passe</label>
-            <input type="password" class="form-control" name="password" placeholder="Entrez le Mot de passe">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password">
+            @error('password')
+                <div>{{ $message }}</div>
+            @enderror
           </div>
 
        

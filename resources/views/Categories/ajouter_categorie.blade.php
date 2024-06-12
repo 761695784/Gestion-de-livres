@@ -31,11 +31,17 @@
             @csrf
           <div class="mb-3">
             <label for="libelle" class="form-label">libelle</label>
-            <input class="form-control" type="text" name="libelle"  >
+            <input class="form-control" type="text" name="libelle" value ="{{old('libelle')}}" >
+            @error('libelle')
+            <div>{{ $message }}</div>
+            @enderror
           </div>
           <div class="mb-3">
             <label for="Titre" class="form-label">description</label>
-            <textarea class="form-control" name="description"  row="10" placeholder="Entrez la description"></textarea> 
+            <textarea class="form-control" name="description"  row="10" placeholder="Entrez la description"> {{old('libelle')}}</textarea>
+            @error('description')
+            <div>{{ $message }}</div>
+            @enderror 
           </div>
          
         

@@ -15,7 +15,11 @@ class AuthController extends Controller
    }
 
    public function registerAdd(Request $request){
-
+    $request->validate([
+        'name' => 'required|string|max:15',
+        'email' => 'required|string|email|max:20|unique:users,email',
+        'password' => 'required|string|min:8|confirmed',
+    ]);
     $user = new User();
     $user->name = $request->name;
     $user->email = $request->email;
@@ -46,6 +50,6 @@ class AuthController extends Controller
 
    public function logout(){
     Auth::logout();
-    return redirect('/login');
+    return redirect('/');
    }
 }

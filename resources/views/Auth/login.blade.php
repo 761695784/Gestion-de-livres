@@ -17,12 +17,19 @@
         <form action="{{route('login')}}" method="POST">
             @csrf
           <div class="mb-3">
-            <label for="email" class="form-label">email</label>
-            <input class="form-control" type="email" name="email"  placeholder="saisir votre email">
+            <label for="email">Email:</label>
+            <input class="form-control" type="email" name="email" id="email" value="{{ old('email') }}">
+            @error('email')
+                <div>{{ $message }}</div>
+            @enderror
           </div>
           <div class="mb-3">
-            <label for="Titre" class="form-label">Mot de Passe</label>
-            <input class="form-control"  type="password" name="password" placeholder="votre mot de passe">
+        
+            <label for="password">Password:</label>
+            <input  class="form-control" type="password" name="password" id="password">
+            @error('password')
+                <div>{{ $message }}</div>
+            @enderror
           </div>
          
         

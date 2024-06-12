@@ -21,8 +21,8 @@ class CategorieController extends Controller
    public function ajouter_categorie_traitement(Request $request){
 
     $request->validate([
-        'libelle' =>'required',
-        'description' =>'required',
+        'libelle' => 'required|string|max:25|',
+        'description' =>'required|string|max:200|',
     ]);
     $categorie = new Categorie();
     $categorie->libelle = $request->libelle;
@@ -38,8 +38,8 @@ class CategorieController extends Controller
 
     public function modifier_traitement(Request $request){
         $request->validate([
-            'libelle' =>'required',
-            'description' =>'required',
+            'libelle' => 'required|string|max:25|',
+            'description' =>'required|string|max:200|',
         ]);
         $categorie = Categorie::find($request->id);
         $categorie->libelle = $request->libelle;

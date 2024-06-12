@@ -32,11 +32,17 @@
           <div class="mb-3">
             <label for="Editeur" class="form-label">Editeur</label>
             <input type="text" class="form-control" name="editeur" value="{{$livre->editeur}}">
+            @error('editor')
+            <div>{{ $message }}</div>
+            @enderror
           </div>
 
           <div class="mb-3">
             <label for="Identifiant" class="form-label">ISBN</label>
             <input type="text" class="form-control" name="isbn" value="{{$livre->isbn}}">
+            @error('isbn')
+            <div>{{ $message }}</div>
+            @enderror
           </div>
 
 
@@ -44,11 +50,17 @@
           <div class="mb-3">
             <label for="Page" class="form-label">Nombre de page</label>
             <input type="number" class="form-control" name="nbre_page" value="{{$livre->nbre_page}}">
+            @error('nbre_page')
+            <div>{{ $message }}</div>
+            @enderror
           </div>
          
           <div class="mb-3">
             <label for="Publication" class="form-label">Publié le</label>
             <input type="date" class="form-control" name="date_publication" value="{{$livre->date_publication}}">
+            @error('date_publication')
+            <div>{{ $message }}</div>
+            @enderror
           </div>
 
           <div class="form-group">

@@ -23,39 +23,60 @@
         <form action="ajouter_traitement" method="POST">
             @csrf
           <div class="mb-3">
-            <label for="Image" class="form-label">Image</label>
-            <input class="form-control" type="string" name="image"  >
+            <label for="image">Image</label>
+            <input  class="form-control" type="string" name="image" id="image">
+            @error('image')
+                <div>{{ $message }}</div>
+            @enderror
           </div>
           <div class="mb-3">
             <label for="Titre" class="form-label">Titre</label>
-            <input type="text" class="form-control" name="titre" placeholder="Entrez le titre du livre">
+            <input type="text" class="form-control" name="titre" placeholder="Entrez le titre du livre" value="{{ old('titre') }}" >
+            @error('titre')
+            <div>{{ $message }}</div>
+            @enderror
           </div>
          
           <div class="mb-3">
             <label for="Auteur" class="form-label">Auteur</label>
-            <input type="text" class="form-control" name="auteur" placeholder="Entrez l'auteur du livre">
+            <input type="text" class="form-control" name="auteur" placeholder="Entrez l'auteur du livre" value="{{ old('auteur') }}">
+            @error('auteur')
+            <div>{{ $message }}</div>
+            @enderror
           </div>
 
           <div class="mb-3">
             <label for="Editeur" class="form-label">Editeur</label>
-            <input type="text" class="form-control" name="editeur" placeholder="Entrez l'editeur du livre">
+            <input type="text" class="form-control" name="editeur" placeholder="Entrez l'editeur du livre" value="{{ old('editeur') }}">
+            @error('editeur')
+            <div>{{ $message }}</div>
+            @enderror
           </div>
 
           <div class="mb-3">
             <label for="Identifiant" class="form-label">ISBN</label>
-            <input type="text" class="form-control" name="isbn" placeholder="Entrez l'identifiant unique du livre">
+            <input type="text" class="form-control" name="isbn" placeholder="Entrez l'identifiant unique du livre" value="{{ old('isbn') }}">
+            @error('isbn')
+            <div>{{ $message }}</div>
+            @enderror
           </div>
 
 
 
           <div class="mb-3">
             <label for="Page" class="form-label">Nombre de page</label>
-            <input type="number" class="form-control" name="nbre_page" placeholder="Preciser le nombre de page du livre">
+            <input type="number" class="form-control" name="nbre_page" placeholder="Preciser le nombre de page du livre" value="{{ old('nbre_page') }}">
+            @error('nbre_page')
+            <div>{{ $message }}</div>
+            @enderror
           </div>
          
           <div class="mb-3">
             <label for="Publication" class="form-label">Publié le</label>
-            <input type="date" class="form-control" name="date_publication" >
+            <input type="date" class="form-control" name="date_publication" value="{{ old('date_publication') }}">
+            @error('date_publication')
+            <div>{{ $message }}</div>
+            @enderror
           </div>
 
           <div class="form-group">
