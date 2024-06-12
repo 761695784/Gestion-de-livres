@@ -20,7 +20,7 @@ class RayonController extends Controller
 
     public function ajouter_rayon_traitement(Request $request){
         $request->validate([
-            'libelle' => 'required|string|max:200|unique:rayons,libelle',
+            'libelle' => 'required|string|max:25|',
             'partie' => 'required|string|max:100',
         ]);
         $rayon = new Rayon();
@@ -37,7 +37,7 @@ class RayonController extends Controller
 
     public function modifier_traitement(Request $request){
         $request->validate([
-            'libelle' => 'required|string|max:200|unique:rayons,libelle',
+               'libelle' => 'required|string|max:25|',
             'partie' => 'required|string|max:100',
         ]);
         $rayon = Rayon::find($request->id);

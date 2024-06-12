@@ -24,7 +24,7 @@ class LivreController extends Controller
    public function ajouter_traitement(Request $request)
    {
       $request->validate([
-         'image' => 'required|image',
+         'image' => 'required|',
          'titre' => 'required|string|max:50',
          'auteur' => 'required|string|max:20',
          'editeur' => 'required|string|max:30',
