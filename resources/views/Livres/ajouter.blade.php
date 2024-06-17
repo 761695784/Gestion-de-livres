@@ -9,55 +9,45 @@
   <body>
     <div class="container mt-5">
         <h1 class="text-center">Ajouter un Livre</h1>
-      
-        
-        <ul>
-          @foreach ($errors->all() as $error)
-          <li class="alert alert-danger">
-            {{$error}}
-         </li>
-          @endforeach
-        </ul>
-          
 
         <form action="ajouter_traitement" method="POST">
             @csrf
           <div class="mb-3">
             <label for="image">Image</label>
-            <input  class="form-control" type="string" name="image" id="image">
+            <input  class="form-control  @error('image') is-invalid @enderror" type="string" name="image" id="image" value="{{ old('image') }}" >
             @error('image')
-                <div>{{ $message }}</div>
+            <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
           <div class="mb-3">
             <label for="Titre" class="form-label">Titre</label>
-            <input type="text" class="form-control" name="titre" placeholder="Entrez le titre du livre" value="{{ old('titre') }}" >
+            <input type="text" class="form-control  @error('titre') is-invalid @enderror " name="titre" placeholder="Entrez le titre du livre" value="{{ old('titre') }}" >
             @error('titre')
-            <div>{{ $message }}</div>
+            <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
          
           <div class="mb-3">
             <label for="Auteur" class="form-label">Auteur</label>
-            <input type="text" class="form-control" name="auteur" placeholder="Entrez l'auteur du livre" value="{{ old('auteur') }}">
+            <input type="text" class="form-control  @error('auteur') is-invalid @enderror" name="auteur" placeholder="Entrez l'auteur du livre" value="{{ old('auteur') }}">
             @error('auteur')
-            <div>{{ $message }}</div>
+            <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
 
           <div class="mb-3">
             <label for="Editeur" class="form-label">Editeur</label>
-            <input type="text" class="form-control" name="editeur" placeholder="Entrez l'editeur du livre" value="{{ old('editeur') }}">
+            <input type="text" class="form-control  @error('editeur') is-invalid @enderror " name="editeur" placeholder="Entrez l'editeur du livre" value="{{ old('editeur') }}">
             @error('editeur')
-            <div>{{ $message }}</div>
+            <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
 
           <div class="mb-3">
             <label for="Identifiant" class="form-label">ISBN</label>
-            <input type="text" class="form-control" name="isbn" placeholder="Entrez l'identifiant unique du livre" value="{{ old('isbn') }}">
+            <input type="text" class="form-control  @error('isbn') is-invalid @enderror" name="isbn" placeholder="Entrez l'identifiant unique du livre" value="{{ old('isbn') }}">
             @error('isbn')
-            <div>{{ $message }}</div>
+            <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
 
@@ -65,17 +55,17 @@
 
           <div class="mb-3">
             <label for="Page" class="form-label">Nombre de page</label>
-            <input type="number" class="form-control" name="nbre_page" placeholder="Preciser le nombre de page du livre" value="{{ old('nbre_page') }}">
+            <input type="number" class="form-control @error('nbre_page') is-invalid @enderror" name="nbre_page" placeholder="Preciser le nombre de page du livre" value="{{ old('nbre_page') }}">
             @error('nbre_page')
-            <div>{{ $message }}</div>
+          <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
          
           <div class="mb-3">
             <label for="Publication" class="form-label">Publié le</label>
-            <input type="date" class="form-control" name="date_publication" value="{{ old('date_publication') }}">
+            <input type="date" class="form-control @error('date_publication') is-invalid @enderror " name="date_publication" value="{{ old('date_publication') }}">
             @error('date_publication')
-            <div>{{ $message }}</div>
+          <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
 

@@ -18,17 +18,17 @@
             @csrf
           <div class="mb-3">
             <label for="email">Email:</label>
-            <input class="form-control" type="email" name="email" id="email" value="{{ old('email') }}">
+            <input class="form-control  @error('email') is-invalid @enderror" type="email" name="email" id="email" value="{{ old('email') }}">
             @error('email')
-                <div>{{ $message }}</div>
+                <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
           <div class="mb-3">
         
             <label for="password">Password:</label>
-            <input  class="form-control" type="password" name="password" id="password">
+            <input  class="form-control  @error('password') is-invalid @enderror" type="password" name="password" id="password">
             @error('password')
-                <div>{{ $message }}</div>
+                <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
          

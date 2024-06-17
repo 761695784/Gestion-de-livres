@@ -41,6 +41,7 @@ class CategorieController extends Controller
             'libelle' => 'required|string|max:25|',
             'description' =>'required|string|max:200|',
         ]);
+        
         $categorie = Categorie::find($request->id);
         $categorie->libelle = $request->libelle;
         $categorie->description = $request->description;

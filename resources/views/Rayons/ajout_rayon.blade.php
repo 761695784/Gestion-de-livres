@@ -15,32 +15,22 @@
                 {{session('status')}}
             </div>   
         @endif
-
-
-
-        <ul>
-          @foreach ($errors->all() as $error)
-          <li class="alert alert-danger">
-            {{$error}}
-         </li>
-          @endforeach
-        </ul>
           
 
         <form action="ajout_rayon_traitement" method="POST">
             @csrf
           <div class="mb-3">
             <label for="libelle" class="form-label">libelle</label>
-            <input class="form-control" type="text" name="libelle" value="{{old('libelle')}}"  >
+            <input class="form-control @error('libelle') is-invalid @enderror" type="text" name="libelle" value="{{old('libelle')}}"  >
             @error('libelle')
-            <div>{{ $message }}</div>
+            <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
           <div class="mb-3">
             <label for="Titre" class="form-label">partie</label>
-            <textarea class="form-control" name="partie"  row="10" placeholder="Entrez la partie">{{old('libelle')}}</textarea> 
+            <textarea class="form-control @error('partie') is-invalid @enderror " name="partie"  row="10" placeholder="Entrez la partie">{{old('libelle')}}</textarea> 
             @error('partie')
-            <div>{{ $message }}</div>
+            <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
          

@@ -9,39 +9,46 @@
   <body>
     <div class="container mt-5">
         <h1 class="text-center">Modifier un Livre</h1>
-      
-    
 
         <form action="/modifier/modifier_traitement" method="POST">
             @csrf
             <input type="hidden" name="id" value="{{$livre->id}}">
           <div class="mb-3">
             <label for="Image" class="form-label">Image</label>
-            <input class="form-control" type="string" name="image" value="{{$livre->image}}">
+            <input class="form-control @error('image') is-invalid @enderror" type="string" name="image" value="{{$livre->image}}">
+            @error('image')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
           </div>
           <div class="mb-3">
             <label for="Titre" class="form-label">Titre</label>
-            <input type="text" class="form-control" name="titre" value="{{$livre->titre}}">
+            <input type="text" class="form-control @error('titre') is-invalid @enderror" name="titre" value="{{$livre->titre}}">
+            @error('titre')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
           </div>
          
           <div class="mb-3">
             <label for="Auteur" class="form-label">Auteur</label>
-            <input type="text" class="form-control" name="auteur" value="{{$livre->auteur}}">
+            <input type="text" class="form-control @error('auteur') is-invalid @enderror" name="auteur" value="{{$livre->auteur}}">
+            @error('auteur')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
           </div>
 
           <div class="mb-3">
             <label for="Editeur" class="form-label">Editeur</label>
-            <input type="text" class="form-control" name="editeur" value="{{$livre->editeur}}">
-            @error('editor')
-            <div>{{ $message }}</div>
+            <input type="text" class="form-control @error('editeur') is-invalid @enderror" name="editeur" value="{{$livre->editeur}}">
+            @error('editeur')
+            <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
 
           <div class="mb-3">
             <label for="Identifiant" class="form-label">ISBN</label>
-            <input type="text" class="form-control" name="isbn" value="{{$livre->isbn}}">
+            <input type="text" class="form-control @error('isbn') is-invalid @enderror " name="isbn" value="{{$livre->isbn}}">
             @error('isbn')
-            <div>{{ $message }}</div>
+            <div class="alert alert-danger" >{{ $message }}</div>
             @enderror
           </div>
 
@@ -49,17 +56,17 @@
 
           <div class="mb-3">
             <label for="Page" class="form-label">Nombre de page</label>
-            <input type="number" class="form-control" name="nbre_page" value="{{$livre->nbre_page}}">
+            <input type="number" class="form-control @error('nbre_page') is-invalid @enderror" name="nbre_page" value="{{$livre->nbre_page}}">
             @error('nbre_page')
-            <div>{{ $message }}</div>
+            <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
          
           <div class="mb-3">
             <label for="Publication" class="form-label">Publié le</label>
-            <input type="date" class="form-control" name="date_publication" value="{{$livre->date_publication}}">
+            <input type="date" class="form-control @error('date_publication') is-invalid @enderror" name="date_publication" value="{{$livre->date_publication}}">
             @error('date_publication')
-            <div>{{ $message }}</div>
+            <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
 

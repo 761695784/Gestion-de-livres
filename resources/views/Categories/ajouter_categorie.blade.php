@@ -18,29 +18,22 @@
 
 
 
-        <ul>
-          @foreach ($errors->all() as $error)
-          <li class="alert alert-danger">
-            {{$error}}
-         </li>
-          @endforeach
-        </ul>
-          
+       
 
         <form action="ajouter_categorie_traitement" method="POST">
             @csrf
           <div class="mb-3">
             <label for="libelle" class="form-label">libelle</label>
-            <input class="form-control" type="text" name="libelle" value ="{{old('libelle')}}" >
+            <input type="text" name="libelle"  class="form-control @error('libelle') is-invalid @enderror" value ="{{old('libelle')}}" >
             @error('libelle')
-            <div>{{ $message }}</div>
+            <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
           <div class="mb-3">
             <label for="Titre" class="form-label">description</label>
-            <textarea class="form-control" name="description"  row="10" placeholder="Entrez la description"> {{old('libelle')}}</textarea>
+            <textarea class="form-control @error('description') is-invalid @enderror" name="description"  row="10" placeholder="Entrez la description"> {{old('description')}}</textarea>
             @error('description')
-            <div>{{ $message }}</div>
+            <div class="alert alert-danger">{{ $message }}</div>
             @enderror 
           </div>
          

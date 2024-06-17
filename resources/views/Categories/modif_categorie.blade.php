@@ -9,24 +9,22 @@
   <body>
     <div class="container mt-5">
         <h1 class="text-center">Modifier une Categorie</h1>
-      
-    
 
         <form action="/modifier_categorie_traitement/{{$categorie->id}}" method="POST">
             @csrf
             <input type="hidden" name="id" value="{{$categorie->id}}">
           <div class="mb-3">
             <label for="Libelle" class="form-label">Libelle</label>
-            <input class="form-control" type="text" name="libelle" value="{{$categorie->libelle}}">
+            <input class="form-control @error('libelle') is-invalid @enderror" type="text" name="libelle" value="{{$categorie->libelle}}">
             @error('libelle')
-            <div>{{ $message }}</div>
+            <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
           <div class="mb-3">
             <label for="Description" class="form-label">Description</label>
-            <textarea class="form-control" name="description"  row="10" >{{$categorie->description}}</textarea> 
+            <textarea class="form-control @error('description') is-invalid @enderror  " name="description"  row="10" >{{$categorie->description}}</textarea> 
             @error('description')
-            <div>{{ $message }}</div>
+            <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
 
