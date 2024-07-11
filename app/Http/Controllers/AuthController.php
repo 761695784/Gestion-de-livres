@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-   public function register(){ 
+   public function register(){
     return view('Auth.register');
    }
 
@@ -27,9 +27,6 @@ class AuthController extends Controller
     $user->save();
     return back()->with('success', 'inscription effectuée avec succes');
 
-
-
-
    }
 
    public function login(){
@@ -43,7 +40,7 @@ class AuthController extends Controller
     ];
     if(Auth::attempt($credetails)){
         return redirect('/liste')->with('success', 'Bienvenue');
-    } 
+    }
 
     return back()->with('error', 'email ou mot de passe incorrect');
    }
